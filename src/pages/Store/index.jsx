@@ -49,7 +49,7 @@ export default function Store() {
                             <li key={e.id}>
                                 <h4>{e.title}</h4>
                                 <img src={e.thumbnail} alt="" />
-                                <h5>{e.price}</h5>
+                                <h5>{`R$ ${e.price}`}  </h5>
                                 <button onClick={() => handleClick(e)}>
                                     {
                                         cart.some((itemCart) => itemCart.id === e.id) ? (<BsFillCartCheckFill/>) : (<BsFillCartPlusFill/>)

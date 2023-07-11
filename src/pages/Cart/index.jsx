@@ -15,17 +15,21 @@ export default function Cart() {
         setItem('carrinhoTeste', arrFilter)
     }
 
+    const subTotal = data.reduce((acc, cur) => acc + cur.price, 0);
+
     return (
         <div>
             <h1>CART</h1>
             <Link to='/store'>Voltar para as compras</Link>
+
+            <h3>{`SubTotal: R$ ${subTotal}`}</h3>
             <div>
                 {
                     data.map((e) => (
                         <li key={e.id}>
                                 <h4>{e.title}</h4>
                                 <img src={e.thumbnail} alt="" />
-                                <h5>{e.price}</h5>
+                                <h5>{`R$ ${e.price}`}  </h5>
                                 <button onClick={() => removeItem(e)}>
                                     <BsFillCartDashFill />
                                 </button>
