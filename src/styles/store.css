@@ -21,3 +21,8 @@ li.product-item{
     align-items: center;
 
 }
+
+.title-sub-total {
+    text-align: center;
+    margin-bottom: 3rem;
+}
