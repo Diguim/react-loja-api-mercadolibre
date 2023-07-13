@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { getItem } from "../../services/LocalStorageFuncs";
+import "../../styles/header.css"
 
 export default function Header(){
     let usuario = ''
@@ -10,19 +11,17 @@ export default function Header(){
     }
 
     return (
-        <>
-        <h1>Loja com API do Mercado livre</h1>
-        <nav>
-            <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/cart'>Carrinho</Link></li>
-                <li><Link to='/store'>Store</Link></li>
-                <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/profile'>My Profile</Link></li>
-                <li><span>{usuario}</span></li>
-                
-            </ul>
-        </nav>
-        </>
+        <header>
+            <h1>Loja com API do Mercado livre</h1>
+            <nav>
+                <ul>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/cart'>Carrinho</Link></li>
+                    <li><Link to='/store'>Store</Link></li>
+                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/profile'>My Profile</Link> <span>Olá, {usuario}!</span></li>
+                </ul>
+            </nav>
+        </header>
     )
 }

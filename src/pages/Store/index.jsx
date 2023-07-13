@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './store.css'
+import '../../styles/store.css'
 import {BsFillCartCheckFill, BsFillCartPlusFill} from 'react-icons/bs'
 import {setItem, getItem} from '../../services/LocalStorageFuncs'
-import { Link } from "react-router-dom";
 
 
 export default function Store() {
@@ -41,12 +40,12 @@ export default function Store() {
     return (
         <div>
             <h1>Store</h1>
-            <Link to='/cart'>Carrinho</Link>
+            {/* <Link to='/cart'>Carrinho</Link> */}
             <div className="lista-products">
-                <ul>
+                <ul className="list-itens">
                     {
                         data.map((e) => (
-                            <li key={e.id}>
+                            <li className="product-item" key={e.id}>
                                 <h4>{e.title}</h4>
                                 <img src={e.thumbnail} alt="" />
                                 <h5>{`R$ ${e.price}`}  </h5>
